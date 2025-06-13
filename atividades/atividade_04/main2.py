@@ -14,6 +14,9 @@ print("1. Inserir um nome na lista")
 print("2. Exibir a lista de nomes")
 print("3. Pesquisar por um nome na lista")
 print("4. Sair do programa")
+print("5. Sair do programa")
+print("6. Sair do programa")
+
 opção = input("Digite a opção desejada: ").strip()
 while True:
     if opção == "1":

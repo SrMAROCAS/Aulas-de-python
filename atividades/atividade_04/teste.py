@@ -5,7 +5,7 @@ Crie um programa em que o usuário pode escolher entre:
 - Pesquisar por um nome na lista
 - Sair do programa
 """
-
+'''
 lista = []
 
 print("----------Menu---------")
@@ -20,7 +20,7 @@ whilwe True:
 if opção not in ["1", "2", "3", "4"]:
     print("Opção inválida. Tente novamente.")
     opção = input("Digite a opção desejada: ").capitalize().strip()
-    continue
+    
 if opção == "1":
     nome = input("Informe o nome do item que você deseja que seja adicionado: ").capitalize().strip().title()
     lista.append(nome) # Adiciona o item à lista carrinho
@@ -40,3 +40,4 @@ match confirmar:
 continue
 for nome in lista: # Exibe os itens do carrinho
     print(nome)
+'''

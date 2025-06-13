@@ -4,6 +4,8 @@
 # - inserir um nome em uma lista
 # - exibir a lista de nomes
 # - pesquisar por um nome na lista
+# - Alterar item da lista
+# - Excluir item da lista 
 # - sair do programa
 
 import os #permitir limpar o terminal
@@ -14,7 +16,9 @@ while True: # Loop infinito para manter o menu ativo
 	print("1 - Inserir novo nome na lista")
 	print("2 - Exibir lista")
 	print("3 - Pesquisar nome na lista")
-	print("4 - Sair do programa")
+	print("4 - Alterar um item na lista")
+	print("5 - Excluir item da lista")
+	print("6 - Sair do programa")
 	print(f"{'-'*30} ---- {'-'*30}")
 
 	opcao = input("Opção desejada: ").strip()
@@ -35,8 +39,8 @@ while True: # Loop infinito para manter o menu ativo
 		case"2":
 			print("\nLista:\n")
 			try:
-				for nome in nomes:
-					print(nome)
+				for i in range(len(nomes)):
+					print(f"Índice: {i}: {nomes[i]}.")
 				print("\n")
 			except Exception as e:
 				print("Não foi possivel exibir o nome na lista. {e}.")
@@ -49,6 +53,30 @@ while True: # Loop infinito para manter o menu ativo
 			print(f"{nome_pesquisado} foi encontrado {result} vezes.")
 			continue
 		case"4":
+			try: 
+				i = int(input("Informe i índice que deseja alterar: "))
+				if i >= 0 and i < len(nomes):
+					nomes[i] = input("informe o novo nome: ")
+					print("Nome alterado com sucesso.")
+				else:
+					print("Índice inválido.")
+			except Exception as e:
+				print(f"Não foi possível alterar item da lista. {e}.")
+			finally:
+				continue
+		case"5":
+			try:
+				i = int(input("Informe o índice que deseja excluir: "))
+				if i >= 0 and i < len(nomes):
+					del(nomes[i])
+					print("Nome excluído com sucesso.")
+				else:
+					print(f"Não foi possível excluir nome. {e}.")
+			except Exception as e:
+				print(f"Não foi possível excluir nome. {e}.")	
+			finally:
+				continue
+		case"6":
 			print("Programa encerrado!")
 		case _:
 			print("Opção inválida")
