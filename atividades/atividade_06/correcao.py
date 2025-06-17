@@ -15,8 +15,9 @@ while True:
         case"1":
             chave = input("Informe o nome da chave que deseja inserir: ").lower().strip()
             usuario[chave] = input(f"Informe o valor para a chave '{chave}': ")
-
+            os.system("cls")
             print("Chave cadastrada com sucesso!")
+        
             continue
         case"2":
             for chave in usuario:
